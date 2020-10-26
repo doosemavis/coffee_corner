@@ -1,4 +1,3 @@
 class Beverage < ActiveRecord::Base
-    belongs_to :roasters
-    belongs_to :customers
+    belongs_to :roaster
 end

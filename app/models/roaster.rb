@@ -1,4 +1,4 @@
 class Roaster < ActiveRecord::Base
-    has_many :customers
+    belongs_to :customer
     has_many :beverages
 end
