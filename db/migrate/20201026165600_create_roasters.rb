@@ -1,10 +1,10 @@
-class CreateRoasters < ActiveRecord::Migration[5.2]
+class CreateRoasters < ActiveRecord::Migration
   
   def change
     create_table :roasters do |t|
       t.string :name
       t.string :address
-      t.string :beverage_id
+      t.string :customer_id
       t.timestamps null: false
     end
   end

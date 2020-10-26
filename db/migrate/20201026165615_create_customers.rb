@@ -1,4 +1,4 @@
-class CreateCustomers < ActiveRecord::Migration[5.2]
+class CreateCustomers < ActiveRecord::Migration
   
   def change
     create_table :customers do |t|
@@ -6,7 +6,6 @@ class CreateCustomers < ActiveRecord::Migration[5.2]
       t.string :last_name
       t.string :email
       t.string :phone_number
-      t.string :roaster_id
       t.timestamps null: false
     end
   end
