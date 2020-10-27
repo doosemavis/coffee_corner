@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
     post '/login' do
         @user = User.find_by(username: params[:username])
-        binding.pry
+        # binding.pry
         if @user && @user.authenticate(params[:password])
             session[:user_id] = @user.id
             redirect '/roasters'
@@ -34,4 +34,10 @@ class UsersController < ApplicationController
         end
     end
 
+    
+    post '/logout' do
+        session.destroy
+        redirect '/login'
+    end
 end
+

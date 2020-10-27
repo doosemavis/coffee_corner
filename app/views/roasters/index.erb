@@ -1,1 +1,7 @@
-<h1>Hello there, <%= @user.name %></h1>
+<h1>Hello there, <%= @user.username %></h1>
+
+<p>Here are your favorite Beverages and Roasters</p>
+
+<form action="/logout" method="POST">
+    <input type="submit" value="Log Out">
+</form>
