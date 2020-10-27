@@ -24,6 +24,9 @@ class UsersController < ApplicationController
         email: params[:email], 
         username: params[:username], 
         password: params[:password])
+
+        if user 
+            redirect 'user/login'
     end 
 
 end
