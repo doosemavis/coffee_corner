@@ -14,6 +14,7 @@
 ActiveRecord::Schema.define(version: 20201026165650) do
 
   create_table "beverages", force: :cascade do |t|
+    t.string   "name"
     t.string   "ingredients"
     t.string   "size"
     t.string   "roaster_id"
