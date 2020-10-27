@@ -1,20 +1,16 @@
 class UsersController < ApplicationController
 
-    get '/' do 
-        erb :'user/index'
-    end
-
     
     get '/login' do
-        erb :'user/login'
+        erb :'users/login'
     end 
 
     post '/login' do
         @user = User.find_by(username: params[:username])
-
+        binding.pry
         if @user && @user.authenticate(params[:password])
             session[:user_id] = @user.id
-            redirect 'roaster/index'
+            redirect '/roasters'
         else 
             redirect '/signup'
         end
@@ -22,7 +18,7 @@ class UsersController < ApplicationController
 
 
     get '/signup' do 
-        erb :'user/signup'
+        erb :'users/signup'
     end
 
     post '/signup' do 
@@ -32,6 +28,8 @@ class UsersController < ApplicationController
         password: params[:password])
 
         if @user 
+            redirect '/roasters'
+        else 
             redirect '/login'
         end
     end

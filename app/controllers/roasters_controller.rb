@@ -1,7 +1,8 @@
 class RoastersController < ApplicationController
 
-    # get "/" do
-    #     erb :'roaster/index'
-    # end
+    get '/roasters' do
+        binding.pry
+        erb :'roasters/index'
+    end
 
 end
