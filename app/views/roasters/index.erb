@@ -2,6 +2,16 @@
 
 <p>Here are your favorite Beverages and Roasters</p>
 
+<% @roasters.each do |roaster| %>
+    <p><%= roaster.name %></p>
+    <p><%= roaster.address %></p>
+    <% roaster.beverages.each do |beverage| %>
+        <p><%= beverage.name %></p>
+        <p><%= beverage.ingredients %></p>
+        <p><%= beverage.size %></p>
+    <% end %>
+<% end %>
+
 <form action="/logout" method="POST">
     <input type="submit" value="Log Out">
 </form>
