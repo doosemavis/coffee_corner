@@ -3,13 +3,15 @@
 <p>Here are your favorite Beverages and Roasters</p>
 
 <% @roasters.each do |roaster| %>
-    <p><%= roaster.name %></p>
-    <p><%= roaster.address %></p>
+    <h4><%= roaster.name %></h4><a href="/roasters/<%= roaster.id %>/beverages/new"><button>Add Beverage</button></a>
+    <h4><%= roaster.address %></h4><br>
+    <ul>
     <% roaster.beverages.each do |beverage| %>
-        <p><%= beverage.name %></p>
-        <p><%= beverage.ingredients %></p>
-        <p><%= beverage.size %></p>
+        <h5>   Name: <%= beverage.name %></h5>
+        <li>   Ingredients: <%= beverage.ingredients %></li>
+        <li>   Size: <%= beverage.size %></li><br>
     <% end %>
+    </ul>
 <% end %>
 
 <form action="/logout" method="POST">
