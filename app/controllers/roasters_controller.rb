@@ -1,7 +1,7 @@
 class RoastersController < ApplicationController
 
-    get "/" do
-        erb :'roaster/index'
-    end
+    # get "/" do
+    #     erb :'roaster/index'
+    # end
 
 end

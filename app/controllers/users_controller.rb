@@ -4,6 +4,7 @@ class UsersController < ApplicationController
         erb :'user/index'
     end
 
+    
     get '/login' do
         erb :'user/login'
     end 
@@ -14,9 +15,10 @@ class UsersController < ApplicationController
         if @user && @user.authenticate(params[:password])
             session[:user_id] = @user.id
         else 
-            redirect '/user/signup'
+            redirect '/signup'
         end
     end
+
 
     get '/signup' do 
         erb :'user/signup'
