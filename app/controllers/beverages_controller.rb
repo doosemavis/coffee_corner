@@ -17,9 +17,18 @@ class BeveragesController < ApplicationController
         size: params[:size])
 
         redirect '/roasters'
+    end
+
+
+    get '/roasters/:roaster_id/beverages/edit' do
+        erb :'beverages/edit'
+    end
+
+    patch '/roasters/:roaster_id/beverages/edit' do
+
     end 
 
-    post '/beverages' do 
+    # post '/beverages' do 
 
-    end 
+    # end 
 end
