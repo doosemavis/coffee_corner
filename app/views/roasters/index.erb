@@ -5,8 +5,6 @@
 <% @roasters.each do |roaster| %>
     <hr><br>
     <a href="/roasters/<%= roaster.id %>/beverages/new"><button>Add Beverage</button></a>
-    <a href="/roasters/:roaster_id/beverages/edit"><button>Edit Beverage</button></a>
-    <a href=""><button>Delete Beverage</button></a>
     <h3><%= roaster.name %></h3><a href="/roasters/<%= roaster.id %>/beverages/new"></a>
     <h5><%= roaster.address %></h5><br>
     <ul>
@@ -14,6 +12,13 @@
         <h4>   Name: <%= beverage.name %></h4>
         <li>   Ingredients: <%= beverage.ingredients %></li>
         <li>   Size: <%= beverage.size %></li><br>
+         <a href="/beverages/<%= beverage.id %>/edit"><button>Edit Beverage</button></a>
+         <form action="/roasters/<%= roaster.id %>/beverages/<%= beverage.id %>" method="POST">
+            <input type="hidden" id="hidden" name="_method" value="DELETE">
+            <input type="submit" value="Delete Beverage">
+        </form>
+
+
     <% end %>
     </ul>
 <% end %>

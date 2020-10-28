@@ -20,12 +20,29 @@ class BeveragesController < ApplicationController
     end
 
 
-    get '/roasters/:roaster_id/beverages/edit' do
+    get '/beverages/:id/edit' do
+        binding.pry
+        @beverage = current_user.beverages.find_by(id: params[:id])
+        
         erb :'beverages/edit'
     end
 
-    patch '/roasters/:roaster_id/beverages/edit' do
+    patch '/beverages/:id' do
+        binding.pry
+        beverage = current_user.beverages.find_by(id: params[:id])
+        beverage.update(name: params[:name], 
+        ingredients: params[:ingredients],
+        size: params[:size])
 
+        redirect '/roasters'
+    end 
+
+    delete '/roasters/:roaster_id/beverages/:id' do
+        binding.pry
+        beverage = current_user.beverages.find_by(id: params[:id])
+        beverage.destroy
+
+        redirect '/roasters'
     end 
 
     # post '/beverages' do 

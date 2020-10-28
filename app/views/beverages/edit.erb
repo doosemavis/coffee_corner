@@ -1,7 +1,10 @@
-<form action="/roasters/:roaster_id/beverages/edit" method="POST">
+
+
+<form action="/beverages/<%= @beverage.id %>" method="POST">
     <input type="hidden" id="hidden" name="_method" value="PATCH">
+
     <input type="text" name="name" value="<%= @beverage.name %>">
-    <input type="text" name="ingridents" value="<%= @beverage.ingredients %>">
+    <input type="text" name="ingredients" value="<%= @beverage.ingredients %>">
     <input type="text" name="size" value="<%= @beverage.size %>">
     <input type="submit" value="Submit">
 
