@@ -5,7 +5,7 @@
 <% @roasters.each do |roaster| %>
     <hr><br>
     <a href="/roasters/<%= roaster.id %>/beverages/new"><button>Add Beverage</button></a>
-    <a href=""><button>Edit Beverage</button></a>
+    <a href="/roasters/:roaster_id/beverages/edit"><button>Edit Beverage</button></a>
     <a href=""><button>Delete Beverage</button></a>
     <h3><%= roaster.name %></h3><a href="/roasters/<%= roaster.id %>/beverages/new"></a>
     <h5><%= roaster.address %></h5><br>
