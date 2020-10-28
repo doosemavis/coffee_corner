@@ -1,19 +1,19 @@
 <h1>Hello there, <%= current_user.name %></h1>
 
-<p>Here are your favorite Beverages and Roasters</p>
+<p>Here are your favorite Roasters and Beverages</p>
 
 <% @roasters.each do |roaster| %>
-    <h4><%= roaster.name %></h4><a href="/roasters/<%= roaster.id %>/beverages/new"><button>Add Beverage</button></a>
+    <a href="/roasters/<%= roaster.id %>/beverages/new"><button>Add Beverage</button></a>
+    <h3><%= roaster.name %></h3><a href="/roasters/<%= roaster.id %>/beverages/new"></a>
     <h4><%= roaster.address %></h4><br>
     <ul>
     <% roaster.beverages.each do |beverage| %>
-        <h5>   Name: <%= beverage.name %></h5>
+        <h4>   Name: <%= beverage.name %></h4>
         <li>   Ingredients: <%= beverage.ingredients %></li>
         <li>   Size: <%= beverage.size %></li><br>
     <% end %>
     </ul>
 <% end %>
 
-<form action="/logout" method="POST">
-    <input type="submit" value="Log Out">
-</form>
+
+<a href="/logout"><button>Log Out</button></a>
