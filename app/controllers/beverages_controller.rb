@@ -11,13 +11,10 @@ class BeveragesController < ApplicationController
         # binding.pry
         # find roaster using roaster_id from params and store in roaster variable
         # make beverage in that roasters collection of beverages
-        current_user.roasters
-        roaster.beverages.create
-
-        beverage = roaster.create(name: params[:name],
+        roaster = current_user.roasters.find_by(id: params[:roaster_id])
+        roaster.beverages.create(name: params[:name],
         ingredients: params[:ingredients],
-        size: params[:size],
-        roaster_id: params[:roaster_id].to_i)
+        size: params[:size])
 
         redirect '/roasters'
     end 

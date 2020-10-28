@@ -3,6 +3,7 @@
 <p>Here are your favorite Roasters and Beverages</p>
 
 <% @roasters.each do |roaster| %>
+    <hr><br>
     <a href="/roasters/<%= roaster.id %>/beverages/new"><button>Add Beverage</button></a>
     <h3><%= roaster.name %></h3><a href="/roasters/<%= roaster.id %>/beverages/new"></a>
     <h4><%= roaster.address %></h4><br>
@@ -14,6 +15,6 @@
     <% end %>
     </ul>
 <% end %>
-
-
+<hr><br>
+<a href="/roasters/new"><button>Add New Roaster</button></a>
 <a href="/logout"><button>Log Out</button></a>
