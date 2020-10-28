@@ -9,8 +9,6 @@ class BeveragesController < ApplicationController
 
     post '/roasters/:roaster_id/beverages/new' do
         # binding.pry
-        # find roaster using roaster_id from params and store in roaster variable
-        # make beverage in that roasters collection of beverages
         roaster = current_user.roasters.find_by(id: params[:roaster_id])
         roaster.beverages.create(name: params[:name],
         ingredients: params[:ingredients],
@@ -21,31 +19,28 @@ class BeveragesController < ApplicationController
 
 
     get '/beverages/:id/edit' do
-        binding.pry
+        # binding.pry
         @beverage = current_user.beverages.find_by(id: params[:id])
         
         erb :'beverages/edit'
     end
 
     patch '/beverages/:id' do
-        binding.pry
+        # binding.pry
         beverage = current_user.beverages.find_by(id: params[:id])
-        beverage.update(name: params[:name], 
-        ingredients: params[:ingredients],
-        size: params[:size])
+        beverage.update(
+            name: params[:name], 
+            ingredients: params[:ingredients],
+            size: params[:size])
 
         redirect '/roasters'
     end 
 
     delete '/roasters/:roaster_id/beverages/:id' do
-        binding.pry
+        # binding.pry
         beverage = current_user.beverages.find_by(id: params[:id])
         beverage.destroy
 
         redirect '/roasters'
     end 
-
-    # post '/beverages' do 
-
-    # end 
 end
