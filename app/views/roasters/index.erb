@@ -12,11 +12,12 @@
         <h4>   Name: <%= beverage.name %></h4>
         <li>   Ingredients: <%= beverage.ingredients %></li>
         <li>   Size: <%= beverage.size %></li><br>
-         <a href="/beverages/<%= beverage.id %>/edit"><button>Edit Beverage</button></a>
+         <a href="/beverages/<%= beverage.id %>/edit"><button>Edit Beverage</button></a><br>
          <form action="/roasters/<%= roaster.id %>/beverages/<%= beverage.id %>" method="POST">
             <input type="hidden" id="hidden" name="_method" value="DELETE">
             <input type="submit" value="Delete Beverage">
         </form>
+        <br>
 
 
     <% end %>
