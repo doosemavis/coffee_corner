@@ -26,7 +26,7 @@ class UsersController < ApplicationController
         username: params[:username], 
         password: params[:password])
 
-        if @user 
+        if @user
             session[:user_id] = @user.id
             redirect '/roasters'
         else 
