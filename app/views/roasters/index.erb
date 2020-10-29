@@ -9,7 +9,7 @@
     <h5><%= roaster.address %></h5><br>
     <ul>
     <% roaster.beverages.each do |beverage| %>
-        <h4>   Name: <%= beverage.name %></h4>
+        <h4>   <%= beverage.name %></h4>
         <li>   Ingredients: <%= beverage.ingredients %></li>
         <li>   Size: <%= beverage.size %></li><br>
          <a href="/beverages/<%= beverage.id %>/edit"><button>Edit Beverage</button></a><br>
@@ -18,8 +18,6 @@
             <input type="submit" value="Delete Beverage">
         </form>
         <br>
-
-
     <% end %>
     </ul>
 <% end %>
