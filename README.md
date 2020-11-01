@@ -7,15 +7,15 @@
 This application was designed to keep track of coffee lover's favorite roasters/coffee shops, and their favorite beverages from those shops.
 
 ### Gems for this Application
-`gem 'sinatra'` 
-`gem 'activerecord'`
-`gem 'sinatra-activerecord'`
-`gem 'rake'`
-`gem 'require_all'`
-`gem 'sqlite3'`
-`gem 'shotgun'`
-`gem 'pry'`
-`gem 'bcrypt'`
+`gem 'sinatra'`, 
+`gem 'activerecord'`, 
+`gem 'sinatra-activerecord'`, 
+`gem 'rake'`, 
+`gem 'require_all'`, 
+`gem 'sqlite3'`, 
+`gem 'shotgun'`, 
+`gem 'pry'`, 
+`gem 'bcrypt'`, 
 `gem 'tux'`
 
 Where to find all of these gems?  
@@ -35,4 +35,4 @@ Where to find all of these gems?
 - ActiveRecord
 
 ## License
-[MIT](https://chosealicense.com/licenses/mit/) 
+[MIT](https://choosealicense.com/licenses/mit/) 
