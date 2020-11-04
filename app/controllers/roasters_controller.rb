@@ -1,7 +1,6 @@
 class RoastersController < ApplicationController
 
     get '/roasters' do
-        # binding.pry
         if logged_in?
             @roasters = current_user.roasters
             erb :'roasters/index'
