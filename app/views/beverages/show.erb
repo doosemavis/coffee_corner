@@ -5,6 +5,11 @@
 <p><%= @beverage.ingredients %></p><br>
 
 <b>Size: </b><br><br>
-<p><%= @beverage.size %></p>
+<p><%= @beverage.size %></p><br><br>
 
-<a href="/roasters"><button>Go Back</button></a><br>
+<a href="/roasters"><button>Go Back</button></a><br><br>
+<a href="/beverages/<%= @beverage.id %>/edit"><button>Edit Beverage</button></a><br><br>
+<form action="/beverages/<%= @beverage.id %>" method="POST">
+    <input type="hidden" id="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete Beverage">
+</form>

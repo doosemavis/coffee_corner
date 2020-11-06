@@ -54,7 +54,7 @@ class BeveragesController < ApplicationController
         end 
     end 
 
-    delete '/roasters/:roaster_id/beverages/:id' do
+    delete '/beverages/:id' do
         if logged_in?
             beverage = current_user.beverages.find_by(id: params[:id])
             beverage.destroy
