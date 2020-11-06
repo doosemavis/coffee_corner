@@ -10,7 +10,7 @@
     <ul>
     <% roaster.beverages.each do |beverage| %>
         <h4><a href="/beverages/<%= beverage.id %>"><%= beverage.name %></h4></a><br>
-
+        
          <a href="/beverages/<%= beverage.id %>/edit"><button>Edit Beverage</button></a><br>
          <form action="/roasters/<%= roaster.id %>/beverages/<%= beverage.id %>" method="POST">
             <input type="hidden" id="hidden" name="_method" value="DELETE">
