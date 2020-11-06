@@ -1,6 +1,13 @@
 class BeveragesController < ApplicationController
 
-    
+    get '/beverages/:id' do 
+        @beverage = current_user.beverages.find_by(id: params[:id])
+        erb :'beverages/show'
+    end 
+
+
+
+
     get '/roasters/:roaster_id/beverages/new' do 
         if logged_in?
             @roaster_id = params[:roaster_id].to_i

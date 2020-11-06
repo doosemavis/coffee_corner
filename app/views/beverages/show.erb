@@ -1,5 +1,10 @@
-<h1> Your Beverages </h1>
+<h1> <%= @beverage.name %> </h1>
+<hr>
+<br>
+<b> Ingredients: </b><br><br>
+<p><%= @beverage.ingredients %></p><br>
 
-<p>Beverage: <%= @beverages.name %></p>
-<p>Ingredients: <%= @beverages.ingredients %></p>
-<p>Size: <%= @beverages.size %></p>
+<b>Size: </b><br><br>
+<p><%= @beverage.size %></p>
+
+<a href="/roasters"><button>Go Back</button></a><br>
