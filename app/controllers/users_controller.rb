@@ -9,6 +9,7 @@ class UsersController < ApplicationController
         email: params[:email], 
         username: params[:username], 
         password: params[:password])
+        binding.pry
 
         if user 
             session[:user_id] = user.id
